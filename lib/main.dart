@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes_app/model/models.dart';
-import 'package:notes_app/view/notelist-screen/notelist-screen.dart';
+import 'package:notes_app/view/splash_screen/splash_screen.dart';
 
 Future<void> main() async {
   await Hive.initFlutter();
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.amber),
       debugShowCheckedModeBanner: false,
-      home: NoteListScreen(),
+      home: SplashScreen(),
     );
   }
 }

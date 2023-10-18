@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:notes_app/controller/notescontroller.dart';
 import 'package:notes_app/model/models.dart';
 import 'package:notes_app/utils/color-constants/color-constants.dart';
 import 'package:notes_app/utils/databases/database.dart';
+import 'package:notes_app/utils/image_constants/image_constants.dart';
 import 'package:notes_app/view/detail-screen/detail-screen.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -63,17 +65,36 @@ class _NoteListScreenState extends State<NoteListScreen> {
     return Scaffold(
       backgroundColor: ColorConstant.backgroundColor,
       appBar: AppBar(
-        backgroundColor: ColorConstant.backgroundColor,
-        elevation: 0,
-        title: Text(
-          'NOTES...',
-          style: TextStyle(
-              color: ColorConstant.primaryTextColor,
-              fontSize: 30,
-              fontWeight: FontWeight.w500,
-              letterSpacing: 3),
-        ),
-      ),
+          backgroundColor: ColorConstant.backgroundColor,
+          elevation: 0,
+          leading: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                height: 35,
+                width: 35,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(ImageConstants.notesIcon),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          title: RichText(
+            text: TextSpan(children: [
+              TextSpan(
+                  text: 'Take',
+                  style: GoogleFonts.zeyada(
+                    fontSize: 30,
+                      color: Colors.white, fontWeight: FontWeight.bold)),
+              TextSpan(
+                  text: 'NOTE',
+                  style: GoogleFonts.exo(
+                    fontSize: 25,
+                      color: Colors.amber, fontWeight: FontWeight.w600))
+            ]),
+          )),
       // floating action button
       floatingActionButton: FloatingActionButton(
         onPressed: () {
