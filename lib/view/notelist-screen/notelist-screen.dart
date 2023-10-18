@@ -58,6 +58,7 @@ class _NoteListScreenState extends State<NoteListScreen> {
     titleController.text = '';
     descriptionController.text = '';
     selectedColorIndex = 0;
+    selectedDate = DateTime.now();
   }
 
   @override
